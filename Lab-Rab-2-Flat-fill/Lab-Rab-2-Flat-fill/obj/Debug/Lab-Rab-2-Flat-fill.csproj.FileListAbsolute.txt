@@ -1,0 +1,9 @@
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-2-Flat-fill\Lab-Rab-2-Flat-fill\bin\Debug\Lab-Rab-2-Flat-fill.exe.config
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-2-Flat-fill\Lab-Rab-2-Flat-fill\bin\Debug\Lab-Rab-2-Flat-fill.exe
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-2-Flat-fill\Lab-Rab-2-Flat-fill\bin\Debug\Lab-Rab-2-Flat-fill.pdb
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-2-Flat-fill\Lab-Rab-2-Flat-fill\obj\Debug\Lab-Rab-2-Flat-fill.csprojResolveAssemblyReference.cache
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-2-Flat-fill\Lab-Rab-2-Flat-fill\obj\Debug\Lab_Rab_2_Flat_fill.form.resources
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-2-Flat-fill\Lab-Rab-2-Flat-fill\obj\Debug\Lab_Rab_2_Flat_fill.Properties.Resources.resources
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-2-Flat-fill\Lab-Rab-2-Flat-fill\obj\Debug\Lab-Rab-2-Flat-fill.csproj.GenerateResource.Cache
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-2-Flat-fill\Lab-Rab-2-Flat-fill\obj\Debug\Lab-Rab-2-Flat-fill.exe
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-2-Flat-fill\Lab-Rab-2-Flat-fill\obj\Debug\Lab-Rab-2-Flat-fill.pdb

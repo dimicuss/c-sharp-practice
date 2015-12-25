@@ -1,0 +1,12 @@
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-3-Intersection\Lab-Rab-3-Intersection\obj\Debug\Lab-Rab-3-Intersection.csprojResolveAssemblyReference.cache
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-3-Intersection\Lab-Rab-3-Intersection\obj\Debug\Lab_Rab_3_Intersection.Form1.resources
+c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-3-Intersection\Lab-Rab-3-Intersection\obj\Debug\Lab-Rab-3-Intersection.csproj.GenerateResource.Cache
+C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-Intersection\Lab-Rab-3-Intersection\bin\Debug\Lab-Rab-4-Intersection.exe.config
+C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-Intersection\Lab-Rab-3-Intersection\bin\Debug\Lab-Rab-4-Intersection.exe
+C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-Intersection\Lab-Rab-3-Intersection\bin\Debug\Lab-Rab-4-Intersection.pdb
+C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-Intersection\Lab-Rab-3-Intersection\obj\Debug\Lab_Rab_4_Intersection.Properties.Resources.resources
+C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-Intersection\Lab-Rab-3-Intersection\obj\Debug\Lab-Rab-4-Intersection.exe
+C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-Intersection\Lab-Rab-3-Intersection\obj\Debug\Lab-Rab-4-Intersection.pdb
+C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-4-Intersection\Lab-Rab-3-Intersection\bin\Debug\Lab-Rab-4-Intersection.exe.config
+C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-4-Intersection\Lab-Rab-3-Intersection\obj\Debug\Lab-Rab-4-Intersection.exe
+C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-4-Intersection\Lab-Rab-3-Intersection\obj\Debug\Lab-Rab-4-Intersection.pdb
