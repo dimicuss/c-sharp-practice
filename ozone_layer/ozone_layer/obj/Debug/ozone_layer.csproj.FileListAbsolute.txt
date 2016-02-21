@@ -1,8 +1,0 @@
-c:\users\дмитрий\documents\visual studio 2015\Projects\ozone_layer\ozone_layer\bin\Debug\ozone_layer.exe
-c:\users\дмитрий\documents\visual studio 2015\Projects\ozone_layer\ozone_layer\bin\Debug\ozone_layer.pdb
-c:\users\дмитрий\documents\visual studio 2015\Projects\ozone_layer\ozone_layer\obj\Debug\ozone_layer.csprojResolveAssemblyReference.cache
-c:\users\дмитрий\documents\visual studio 2015\Projects\ozone_layer\ozone_layer\obj\Debug\ozone_layer.Properties.Resources.resources
-c:\users\дмитрий\documents\visual studio 2015\Projects\ozone_layer\ozone_layer\obj\Debug\ozone_layer.csproj.GenerateResource.Cache
-c:\users\дмитрий\documents\visual studio 2015\Projects\ozone_layer\ozone_layer\obj\Debug\ozone_layer.exe
-c:\users\дмитрий\documents\visual studio 2015\Projects\ozone_layer\ozone_layer\obj\Debug\ozone_layer.pdb
-C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\ozone_layer\ozone_layer\obj\Debug\ozone_layer.Form.resources

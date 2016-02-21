@@ -1,9 +1,0 @@
-c:\users\дмитрий\documents\visual studio 2015\Projects\Lab-Rab-3-z-buffer\Lab-Rab-3-z-buffer\bin\Debug\Lab-Rab-3-z-buffer.exe.config
-C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-z-buffer\Lab-Rab-3-z-buffer\bin\Debug\Lab-Rab-3-z-buffer.exe
-C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-z-buffer\Lab-Rab-3-z-buffer\bin\Debug\Lab-Rab-3-z-buffer.pdb
-C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-z-buffer\Lab-Rab-3-z-buffer\obj\Debug\Lab-Rab-3-z-buffer.csprojResolveAssemblyReference.cache
-C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-z-buffer\Lab-Rab-3-z-buffer\obj\Debug\Lab_Rab_3_z_buffer.Form.resources
-C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-z-buffer\Lab-Rab-3-z-buffer\obj\Debug\Lab_Rab_3_z_buffer.Properties.Resources.resources
-C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-z-buffer\Lab-Rab-3-z-buffer\obj\Debug\Lab-Rab-3-z-buffer.csproj.GenerateResource.Cache
-C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-z-buffer\Lab-Rab-3-z-buffer\obj\Debug\Lab-Rab-3-z-buffer.exe
-C:\Users\Дмитрий\Documents\Visual Studio 2015\Projects\Lab-Rab-3-z-buffer\Lab-Rab-3-z-buffer\obj\Debug\Lab-Rab-3-z-buffer.pdb
