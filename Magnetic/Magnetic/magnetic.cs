@@ -11,7 +11,6 @@ namespace Magnetic
     public partial class Magnetic : Form
     {
         Graphics graph;
-        Field field ;
         List<Point> defectPoints;
 
 
@@ -19,7 +18,6 @@ namespace Magnetic
         {
             InitializeComponent();
             graph = Graphics.FromHwnd(drawField.Handle);
-            field = new Field(graph, drawField);
             defectPoints = new List<Point>();
         }
 
@@ -37,7 +35,14 @@ namespace Magnetic
 
             if (pointSpace != 0)
             {
-                field.drawMarking(graph, pointSpace);
+                var field = new Field(graph, drawField);
+
+                if(pointSpace < 10)
+                {
+                    field.drawMarking(graph, 10);
+                    Space.Text = "10";
+                }
+                else field.drawMarking(graph, pointSpace);
             }
             else graph.Clear(Color.White);
         }
@@ -49,19 +54,24 @@ namespace Magnetic
 
             if (defectPoints.Count == 2)
             {
+                var field = new Field(graph, drawField);
+
                 var pointSpace = int.Parse(Space.Text);
 
                 if (defectPoints[0].X == defectPoints[1].X)
                 {
                     MessageBox.Show("Неправильно выбраны координаты: X одной точки не должен равняться X другой.");
+                    defectPoints.Clear();
                 }
                 else if (defectPoints[0].Y % pointSpace == 0 || defectPoints[1].Y % pointSpace == 0)
                 {
                     MessageBox.Show("Неправильно выбраны координаты: Одна из точек находится на одной прямой с активной точкой.");
+                    defectPoints.Clear();
                 }
                 else if (defectPoints[0].X > defectPoints[1].X)
                 {
                     MessageBox.Show("Неправильно выбраны координаты: Точки дефектов пересекаются по вертикали.");
+                    defectPoints.Clear();
                 }
                 else
                 {
@@ -78,6 +88,7 @@ namespace Magnetic
 
             if (pointSpace != 0)
             {
+                var field = new Field(graph, drawField);
                 field.drawMarking(graph, pointSpace);
             }
             else graph.Clear(Color.White);
