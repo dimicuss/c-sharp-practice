@@ -28,7 +28,7 @@ namespace OOPLabrab3
 
         public override string ToString()
         {
-            return Title + ',' + Autor.GetName() + ',' + PublicationDate.ToString() + ';';
+            return Title + ',' + Autor.GetName() + ',' + PublicationDate.ToString() + ";\n";
         }
 
         public virtual object DeepCopy()

@@ -66,62 +66,36 @@ namespace OOPLabrab3
             return clonedList;
         }
 
-        public List<ResearchTeam> SortByRegNumber()
+        public void SortByRegNumber()
         {
-            var clonedList = DeepCopy();
-            var sortedList = new List<ResearchTeam>();
-            ResearchTeam most;
-
-            while (clonedList.Count > 0)
-            {
-                most = clonedList.Aggregate( (x, y) => x.CompareTo(y) > 0 ? x : y );
-                sortedList.Add(most);
-                clonedList.Remove(most);
-            }
-
-            return sortedList;
+            _teamList.Sort( (b, a) => a.CompareTo(b) );
         }
 
-        public List<ResearchTeam> SortByOrgName()
+        public void SortByOrgName()
         {
-            var clonedList = DeepCopy();
-            var sortedList = new List<ResearchTeam>();
             var Comparer = new ResearchTeam();
-            ResearchTeam most;
-
-            while (clonedList.Count > 0)
-            {
-                most = clonedList.Aggregate( (x, y) => Comparer.Compare(x, y) > 0 ? x : y );
-                sortedList.Add(most);
-                clonedList.Remove(most);
-            }
-
-            return sortedList;
+            _teamList.Sort( (a, b) => Comparer.Compare(a, b) );
         }
 
-        public List<ResearchTeam> SortByPubCount()
+        public void SortByPubCount()
         {
-            var clonedList = DeepCopy();
             var comparer = new ResearchTeamComparer();
-
-            clonedList.Sort(comparer);
-
-            return clonedList;
+            _teamList.Sort(comparer);
         }
 
-        public List<ResearchTeam> NGroup(int value)
+        public List< List<ResearchTeam> > NGroup(int value)
         {
             var grouped = _teamList
                 .GroupBy( elm => elm.PerList.Count,
                           elm => elm,
                           (key, elms) => new { Key = key, Elms = elms.ToList() });
 
-            List<ResearchTeam> list = new List<ResearchTeam>();
+            List< List<ResearchTeam> > list = new List< List<ResearchTeam> >();
     
             foreach( var obj in grouped )
             {
                 if (obj.Key == value)
-                    list = obj.Elms;
+                    list.Add(obj.Elms);
             }
 
             return list;

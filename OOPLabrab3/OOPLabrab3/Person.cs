@@ -39,7 +39,7 @@ namespace OOPLabrab3
 
         public override string ToString()
         {
-            return Name + "," + Age + ';';
+            return Name + "," + Age + ";\n";
         }
 
 

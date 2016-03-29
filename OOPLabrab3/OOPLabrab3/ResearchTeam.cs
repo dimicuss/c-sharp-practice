@@ -82,7 +82,7 @@ namespace OOPLabrab3
 
         public override string ToString()
         {
-            var str = _resTheme + "," + _orgName + "," + _regNumber + "," + _resTime + ";";
+            var str = _resTheme + "," + _orgName + "," + _regNumber + "," + _resTime + ";\n";
 
             var PublicationList = _pubList.ToArray();
             var PersonList = _perList.ToArray();
@@ -93,7 +93,7 @@ namespace OOPLabrab3
             for (var i = 0; i < PublicationList.Length; i++)
                 str = str + PublicationList[i].ToString();
 
-            return str;
+            return str + "\n";
         }
 
 
