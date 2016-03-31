@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System;
 
 namespace OOPLabrab3
 {
@@ -83,19 +82,19 @@ namespace OOPLabrab3
             _teamList.Sort(comparer);
         }
 
-        public List< List<ResearchTeam> > NGroup(int value)
+        public List<ResearchTeam> NGroup(int value)
         {
             var grouped = _teamList
-                .GroupBy( elm => elm.PerList.Count,
+                .GroupBy(elm => elm.PerList.Count,
                           elm => elm,
                           (key, elms) => new { Key = key, Elms = elms.ToList() });
 
-            List< List<ResearchTeam> > list = new List< List<ResearchTeam> >();
-    
+            List<ResearchTeam> list = new List<ResearchTeam>();
+
             foreach( var obj in grouped )
             {
                 if (obj.Key == value)
-                    list.Add(obj.Elms);
+                    list = obj.Elms;
             }
 
             return list;

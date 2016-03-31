@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 
 namespace OOPLabrab3
 {
@@ -16,12 +16,13 @@ namespace OOPLabrab3
             var rnd = new Random();
 
 
-            //1. --------------------------
+
+            Console.WriteLine("1. --------------------------\n");
 
             var teamCollection = new ResearchTeamCollection();
             var teamList = new List<ResearchTeam>();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 var resTeam = new ResearchTeam( "OrgName " + rnd.Next(), 
                                                 "ResTheme " + i, 
@@ -30,14 +31,14 @@ namespace OOPLabrab3
                 var perList = new List<Person>();
                 var pubList = new List<Paper>();
 
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < rnd.Next(10, 15); j++)
                 {
                     perList.Add(new Person("Name " + rnd.Next(), 25));
                 }
 
                 for (int j = 0; j < rnd.Next(10, 20); j++)
                 {
-                    pubList.Add(new Paper("New Tiele " + rnd.Next(), perList[0], DateTime.Now));
+                    pubList.Add(new Paper("New Tiele " + rnd.Next(), perList[ rnd.Next(0, 10) ], DateTime.Now));
                 }
 
                 resTeam.PubList = pubList;
@@ -49,7 +50,9 @@ namespace OOPLabrab3
             Console.WriteLine("\n\n\n");
 
 
-            //2. --------------------------
+
+
+            Console.WriteLine("2. --------------------------\n");
 
             teamCollection.SortByRegNumber();
             Console.WriteLine(teamCollection);
@@ -67,9 +70,11 @@ namespace OOPLabrab3
             Console.WriteLine("\n\n");
 
 
-            //3. --------------------------
 
-            Console.WriteLine(teamCollection.GetMinRegNumber);
+
+            Console.WriteLine("3. -------------------------\n");
+
+            Console.WriteLine(teamCollection.GetMinRegNumber); 
             Console.WriteLine();
 
             foreach(ResearchTeam team in teamCollection.GetTwoYears)
@@ -79,39 +84,63 @@ namespace OOPLabrab3
 
             Console.WriteLine();
 
-            
-
-            var testCollection = new TestCollections(10);
-            var first = testCollection.TestTime((obj) =>
+            var counts = teamCollection._teamList.Aggregate(new List<int>(), (acc, elm) =>
             {
-                var indexCenter = (int)Math.Floor( (decimal)(obj.TeamList.Count / 2) );
-                var f = Enumerable.First(obj.TeamList).ToString() + " first in TeamList\n";
-                var l = Enumerable.Last(obj.TeamList).ToString() + " last in TeamList\n";
-                var c = obj.TeamList[indexCenter].ToString() + " center in TeamList\n";
-                var n = obj.TeamList.Contains(new ResearchTeam()) + " contains in TeamList\n\n";
-
-                return f + l + c + n;
+                if (!acc.Contains(elm.PerList.Count))
+                {
+                    acc.Add(elm.PerList.Count);
+                    return acc;
+                }
+                return acc;
             });
 
-            var second = testCollection.TestTime((obj) =>
+            foreach (var count in counts)
             {
-                var indexCenter = (int)Math.Floor( (decimal)(obj.StringList.Count / 2) );
-                var f = Enumerable.First( obj.StringList ).ToString() + " first in StringList\n";
-                var l = Enumerable.Last( obj.StringList ).ToString() + " last in StringList\n";
-                var c = obj.StringList[ indexCenter ].ToString() + " center in StringList\n";
-                var n = obj.StringList.Contains("") + " contains in StringList\n\n";
+                Console.WriteLine("Count = " + count + "\n");
+                teamCollection.NGroup(count).ForEach((elm) => Console.WriteLine(elm));
+            }
 
-                return f + l + c + n;
-            });
+            Console.WriteLine();
 
 
 
+            Console.WriteLine("4. --------------------------");
+
+            Func<dynamic, string, dynamic, string> fn = ( obj, str, contains ) =>
+            {
+                var collection = obj[str];
+
+                var indexCenter = (int)Math.Floor( (decimal)(obj[str].Count / 2) );
+                var f = Enumerable.First( collection ) + " first in " + str + "\n";
+                var l = Enumerable.Last( collection ) + " last in" + str + "\n";
+                var c = Enumerable.ElementAt( collection, indexCenter ) + " center in " + str + "\n";
+
+                string n;
+
+                if (collection is IDictionary)
+                    n = collection.ContainsKey( contains ).ToString() + "\n\n";
+                else n = collection.Contains( contains ).ToString() + "\n\n";
 
 
-            Console.WriteLine(first);
-            Console.WriteLine(second);
+                    return f + l + c + n;
+            };
+
+            var testCollection = new TestCollections( 10 );
+
+            var first = testCollection.TestTime( fn, "TeamList", new Team() );
+            var second = testCollection.TestTime( fn, "StringList", "sds" );
+            var third = testCollection.TestTime( fn, "DictTeamRes", new Team() );
+            var forth = testCollection.TestTime( fn, "DictStrRes", "sdd" );
+
+
+
+            Console.WriteLine( first );
+            Console.WriteLine( second );
+            Console.WriteLine( third );
+            Console.WriteLine( forth );
 
             Console.Read();
+
         }
     }
 }

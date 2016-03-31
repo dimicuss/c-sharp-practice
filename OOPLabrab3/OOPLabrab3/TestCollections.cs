@@ -17,14 +17,17 @@ namespace OOPLabrab3
         }
 
 
-        public string TestTime(Func<dynamic, string> fn)
+        public string TestTime(Func<dynamic, string, dynamic, string> fn, string str, dynamic contains)
         {
             var t1 = DateTime.Now;
 
-            var result = fn.Invoke((new {  TeamList = _teamList,
-                                           StringList = _stringList,
-                                           DictTeamRes = _dictTeamRes,
-                                           DictStrRes = _dictStrRes    }));
+            var dict = new Dictionary<string, object>();
+            dict.Add( "TeamList", _teamList );
+            dict.Add( "StringList", _stringList );
+            dict.Add( "DictTeamRes", _dictTeamRes );
+            dict.Add( "DictStrRes", _dictStrRes );
+
+            var result = fn.Invoke( dict, str, contains );
 
             var t2 = DateTime.Now;
 
