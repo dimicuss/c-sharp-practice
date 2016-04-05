@@ -53,6 +53,7 @@ namespace OOPLabrab32
 			Title = "";
 			Autor = new Person();
 			PublicationDate = new DateTime();
+			Console.WriteLine ("sdd");
 		}
 	}
 }
