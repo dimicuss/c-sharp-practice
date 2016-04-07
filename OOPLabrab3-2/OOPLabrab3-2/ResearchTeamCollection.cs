@@ -4,75 +4,87 @@ using System;
 
 namespace OOPLabrab32
 {
-	class ResearchTeamCollection<Tkey> where Tkey : new()
+	class ResearchTeamCollection<Tkey>
 	{
-		public Dictionary<Tkey, ResearchTeam> _teamList = new Dictionary<Tkey, ResearchTeam>();
+		Dictionary<Tkey, ResearchTeam> _teamList = new Dictionary<Tkey, ResearchTeam>();
 		KeySelector<Tkey> GetKey;
 
 
 		public void AddDefaults(int n) 
 		{
-			for (int i = 0; i < n; i++) {
-				var resTeam = new ResearchTeam();
-				var charArray = i.ToString ().ToCharArray ();
-				var key = (Tkey) Activator.CreateInstance(typeof(Tkey), charArray);
-
-				_teamList.Add (key, resTeam);
+			var rnd = new Random();
+			for (int i = 0; i < n; i++){
+				var resTeam = new ResearchTeam("OrgName " + i, "ResTeam " + rnd.Next(), rnd.Next(), 
+					(i % 2) == 0 ? TimeFrame.Long : TimeFrame.TwoYears );
+				_teamList.Add ( GetKey( resTeam ), resTeam );
 			}
 		}
+
 
 		public void AddResearchTeams(params ResearchTeam[] teams)
 		{
 			for (int i = 0; i < teams.Length; i++) {
-				var charArray = teams[i].Name.ToCharArray();
-				var key = (Tkey) Activator.CreateInstance(typeof(Tkey), charArray);
-				_teamList.Add (key, teams [i]);
+				_teamList.Add(  GetKey( teams[i] ), teams [i]  );
 			}
 		}
-//
-//		public override string ToString()
-//		{
-//			var str = "";
-//
-//			for (int i = 0; i < _teamList.Count; i++)
-//				str = str + _teamList[i].ToString();
-//
-//			return str;
-//		}
-//
-//		public string ToShortString()
-//		{
-//			var str = "";
-//
-//			for (int i = 0; i < _teamList.Count; i++)
-//				str = str + _teamList[i].ToShortString() + ","
-//					+ _teamList[i].PerList.Count + ","
-//					+ _teamList[i].PubList.Count + ";";
-//
-//			return str;
-//		}
-//			
-//
-//
-//		public List<ResearchTeam> NGroup(int value)
-//		{
-//			var grouped = _teamList
-//				.GroupBy(elm => elm.Value,
-//					elm => elm,
-//					(key, elms) => new { Key = key, Elms = elms.ToList() });
-//
-//			List<ResearchTeam> list = new List<ResearchTeam>();
-//
-//			foreach( var obj in grouped )
-//			{
-//				if (obj.Key == value)
-//					list = obj.Elms;
-//			}
 
-			//return list;
-		//}
 
-		ResearchTeamCollection(KeySelector<Tkey> fn) {
+		public override string ToString()
+		{
+			var str = "";
+			var keys = _teamList.Keys;
+
+			for (int i = 0; i < keys.Count; i++)
+				str = str + _teamList[ keys.ElementAt(i) ].ToString();
+	
+			return str;
+		}
+
+
+		public string ToShortString()
+		{
+			var str = "";
+			var keys = _teamList.Keys;
+
+			for (int i = 0; i < keys.Count; i++)
+				str = str + _teamList[ keys.ElementAt(i) ].ToShortString() + ","
+					+ _teamList[ keys.ElementAt(i) ].PerList.Count + ","
+					+ _teamList[ keys.ElementAt(i) ].PubList.Count + ";";
+
+			return str;
+		}
+
+
+		public DateTime MaxDateTime
+		{ 
+			get 
+			{ 
+				return _teamList.Max (elm => 
+				{
+					return elm.Value.PubList.Max( entireElm => entireElm.PublicationDate );
+				}); 
+			}
+		}
+
+
+		public IEnumerable<KeyValuePair<Tkey,ResearchTeam>>TimeFrameGroup (TimeFrame value)
+		{
+			return _teamList.Where( (elm) => elm.Value.ResTime == value );
+		}
+
+
+		public IEnumerable<  IGrouping<TimeFrame, KeyValuePair<Tkey,ResearchTeam>>  > Group
+		{ 
+			get {
+				var grouped = _teamList
+					.GroupBy (elm => elm.Value.ResTime,
+						elm => elm);
+				return grouped;
+			}
+		}
+
+
+		public ResearchTeamCollection(KeySelector<Tkey> fn) {
 			GetKey = fn;
 		}
 	}
